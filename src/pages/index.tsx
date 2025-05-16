@@ -64,7 +64,7 @@ export default function Home() {
       <motion.div
         layout
         animate={{ y: started ? 0 : 0 }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         className="flex flex-col items-center"
         >
           {/* ✅ 로고 클릭 시 초기화 */}
@@ -109,7 +109,7 @@ export default function Home() {
             key="team-block"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.6, delay: 1, ease: "easeInOut" }}
             className="mt-0 w-full"
           >
             {/* 이후 콘텐츠 */}
