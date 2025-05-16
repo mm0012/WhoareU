@@ -111,9 +111,9 @@ export default function Home() {
           {started && (
           <motion.div
             key="team-block"
-            initial={{ opacity: 0, y: 120 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
             className="mt-0 w-full"
           >
             {/* 이후 콘텐츠 */}
