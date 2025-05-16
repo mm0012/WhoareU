@@ -60,17 +60,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 flex justify-center overflow-y-scroll">
       {/* 흰색 박스 */}
-      <div className="w-[750px] min-h-screen bg-white flex flex-col justify-center px-6 py-10">
-      <motion.div
-        layout
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-        className="flex flex-col items-center"
+      <div className="w-[750px] min-h-screen bg-white flex flex-col justify-center px-6 py-8">
+      
+        <motion.div
+            layout
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className={`flex flex-col items-center w-full ${
+              started ? "mt-10" : "mt-32"
+            }`}
         >
-          <motion.div
-           initial={{ opacity: 0}}
-            animate={{ opacity: 1}}
-            transition={{ duration: 1.2,ease: "easeInOut" }}
-          >
             {/* ✅ 로고 클릭 시 초기화 */}
             <div className="mb-5 cursor-pointer" onClick={() => window.location.reload()}>
               <Image src="/logo.png" alt="Who Are You? Logo" width={280} height={35} />
@@ -106,16 +104,17 @@ export default function Home() {
               누가 나올까?
             </button>
           </motion.div>
+          
 
-        </motion.div>
+       
+        
           {started && (
-          <motion.div
-            key="team-block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
-            className="mt-0 w-full"
-          >
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+              className="w-full max-w-md mx-auto mt-8"
+            >
             {/* 이후 콘텐츠 */}
             {team && (
               <div className="mt-8 w-full max-w-md mx-auto">
