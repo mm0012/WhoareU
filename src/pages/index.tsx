@@ -110,10 +110,10 @@ export default function Home() {
         
           {started && (
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
-              className="w-full max-w-md mx-auto mt-8"
+              transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
+              className="w-full max-w-md mx-auto mt-0"
             >
             {/* 이후 콘텐츠 */}
             {team && (
