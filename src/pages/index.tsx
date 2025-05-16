@@ -67,8 +67,8 @@ export default function Home() {
         className="flex flex-col items-center"
         >
           <motion.div
-           initial={{ opacity: 0, y: 1 }}
-            animate={{ opacity: 1, y: 0 }}
+           initial={{ opacity: 0}}
+            animate={{ opacity: 1}}
             transition={{ duration: 1.2,ease: "easeInOut" }}
           >
             {/* ✅ 로고 클릭 시 초기화 */}
