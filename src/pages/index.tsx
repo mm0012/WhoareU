@@ -63,53 +63,57 @@ export default function Home() {
       <div className="w-[750px] min-h-screen bg-white flex flex-col justify-center px-6 py-10">
       <motion.div
         layout
-        animate={{ y: started ? 0 : 0 }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
         className="flex flex-col items-center"
         >
-          {/* ✅ 로고 클릭 시 초기화 */}
-          <div className="mb-5 cursor-pointer" onClick={() => window.location.reload()}>
-            <Image src="/logo.png" alt="Who Are You? Logo" width={280} height={35} />
-          </div>
-  
-          <p className="text-center text-gray-600 text-base leading-relaxed mb-6">
-            오늘은 누구랑 점심 먹을까요? <br />
-            점심시간에 새로운 조합, 새로운 수다! <br />
-            팀 랜덤 돌렸습니다~ 😎
-          </p>
-  
-          {/* 카테고리 버튼 */}
-          <div className="flex w-[280px] gap-2 mb-5">
-            {categoryOptions.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setCategory(cat)}
-                className={`flex-1 py-2 rounded-xl border text-base font-semibold transition
-                  ${category === cat
-                    ? "bg-orange-50 text-orange-500 border-orange-400"
-                    : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"}`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-  
-          {/* 메인 버튼 */}
-          <button
-            onClick={handleTeamPick}
-            className="w-72 py-3 bg-orange-500 text-white rounded-xl font-bold text-lg mb-8 transition hover:bg-orange-600"
+          <motion.div
+           initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2,ease: "easeInOut" }}
           >
-            누가 나올까?
-          </button>
-
+            {/* ✅ 로고 클릭 시 초기화 */}
+            <div className="mb-5 cursor-pointer" onClick={() => window.location.reload()}>
+              <Image src="/logo.png" alt="Who Are You? Logo" width={280} height={35} />
+            </div>
+    
+            <p className="text-center text-gray-600 text-base leading-relaxed mb-6">
+              오늘은 누구랑 점심 먹을까요? <br />
+              점심시간에 새로운 조합, 새로운 수다! <br />
+              팀 랜덤 돌렸습니다~ 😎
+            </p>
+    
+            {/* 카테고리 버튼 */}
+            <div className="flex w-[280px] gap-2 mb-5">
+              {categoryOptions.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setCategory(cat)}
+                  className={`flex-1 py-2 rounded-xl border text-base font-semibold transition
+                    ${category === cat
+                      ? "bg-orange-50 text-orange-500 border-orange-400"
+                      : "bg-white text-gray-600 border-gray-300 hover:border-gray-400"}`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+    
+            {/* 메인 버튼 */}
+            <button
+              onClick={handleTeamPick}
+              className="w-72 py-3 bg-orange-500 text-white rounded-xl font-bold text-lg mb-8 transition hover:bg-orange-600"
+            >
+              누가 나올까?
+            </button>
+          </motion.div>
 
         </motion.div>
           {started && (
           <motion.div
             key="team-block"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 120 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
             className="mt-0 w-full"
           >
             {/* 이후 콘텐츠 */}
